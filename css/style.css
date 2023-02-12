@@ -1,0 +1,352 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Bellefair", serif;
+}
+
+h5 {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+p,
+a {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../assets/home/background-home-mobile.jpg);
+  background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+nav {
+  width: 100%;
+  height: 16vh;
+}
+nav .mobile-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  position: relative;
+}
+nav .mobile-nav .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+}
+nav .mobile-nav .menu-items-mobile {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  height: 100vh;
+  width: 70%;
+  padding: 30px;
+  gap: 60px;
+  transition: all 0.2s linear;
+}
+nav .mobile-nav .menu-items-mobile .close-icon {
+  align-self: flex-end;
+  cursor: pointer;
+}
+nav .mobile-nav .menu-items-mobile ul {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+nav .mobile-nav .menu-items-mobile ul li {
+  display: flex;
+  gap: 20px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+nav .mobile-nav .menu-items-mobile ul li a {
+  display: flex;
+  gap: 15px;
+}
+nav .mobile-nav .menu-items-mobile ul li a span {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2.7px;
+  font-size: 16px;
+}
+nav .mobile-nav .menu-items-mobile ul li a span:nth-child(odd) {
+  font-weight: bold;
+}
+nav .mobile-nav .menu-items-mobile ul li:hover {
+  opacity: 1;
+}
+nav .tablet-nav {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+nav .tablet-nav .logo {
+  padding: 20px;
+}
+nav .tablet-nav ul {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  backdrop-filter: blur(30px);
+  background-color: rgba(255, 255, 255, 0.04);
+  padding-inline: 20px;
+}
+nav .tablet-nav ul li {
+  height: 100%;
+}
+nav .tablet-nav ul li a {
+  display: grid;
+  place-items: center;
+  padding-block: 20px;
+  height: 100%;
+  position: relative;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  font-size: 14px;
+  height: 100%;
+}
+nav .tablet-nav ul a:hover::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #fff;
+  opacity: 0.7;
+}
+nav .tablet-nav ul a[aria-current=page] {
+  content: "";
+  border-bottom: 1px solid white;
+  border-radius: 1px;
+}
+nav .desktop-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  padding-top: 25px;
+  padding-left: 40px;
+  display: none;
+}
+nav .desktop-nav a[aria-current=page] {
+  content: "";
+  border-bottom: 1px solid white;
+  border-radius: 1px;
+}
+nav .desktop-nav ul {
+  display: flex;
+  height: 100%;
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(30px);
+  background-color: rgba(255, 255, 255, 0.04);
+  gap: 40px;
+  position: relative;
+}
+nav .desktop-nav ul .line-through {
+  position: absolute;
+  width: 45%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.397);
+  top: 50%;
+  left: 0;
+  transform: translate(-90%, -50%);
+}
+nav .desktop-nav ul li {
+  height: 100%;
+}
+nav .desktop-nav ul li a {
+  display: flex;
+  padding-block: 20px;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  gap: 10px;
+}
+nav .desktop-nav ul li a span {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2.7px;
+  font-size: 14px;
+}
+nav .desktop-nav ul li a span:nth-child(odd) {
+  font-weight: bold;
+}
+nav .desktop-nav ul a:hover::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #fff;
+  opacity: 0.7;
+}
+
+main {
+  width: 100%;
+  height: 80vh;
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 150px;
+}
+main .hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+main .hero-text h5,
+main .hero-text h1,
+main .hero-text p {
+  color: rgb(208, 214, 249);
+  text-transform: uppercase;
+  text-align: center;
+}
+main .hero-text p {
+  line-height: 25px;
+  font-size: 15px;
+  text-transform: unset;
+}
+main .hero-text h1 {
+  font-size: 80px;
+  color: white;
+}
+main .hero-text h5 {
+  font-size: 16px;
+  letter-spacing: 2.7px;
+}
+main .hero-cta {
+  text-transform: uppercase;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  display: grid;
+  place-items: center;
+  color: rgb(11, 13, 23);
+  cursor: pointer;
+}
+main .hero-cta:hover {
+  outline: 50px solid rgba(255, 255, 255, 0.6);
+}
+@media (min-width: 600px) {
+  main .hero-text h5 {
+    font-size: 20px;
+    letter-spacing: 3.38px;
+  }
+  main .hero-text h1 {
+    line-height: 150px;
+  }
+  main .hero-text p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+@media (min-width: 1000px) {
+  main {
+    flex-direction: row;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  main .hero-text {
+    align-items: flex-start;
+    align-self: flex-end;
+  }
+  main .hero-text h5 {
+    font-size: 28px;
+    letter-spacing: 4.72px;
+  }
+  main .hero-text p {
+    font-size: 18px;
+    line-height: 32px;
+    text-align: start;
+  }
+  main .hero-cta {
+    font-size: 32px;
+    width: 260px;
+    height: 260px;
+    letter-spacing: 2px;
+    align-self: flex-end;
+  }
+}
+
+.translate {
+  transform: translateX(100%);
+}
+
+@media (min-width: 600px) {
+  body {
+    background-image: url(../../assets/home/background-home-tablet.jpg);
+  }
+  nav .mobile-nav {
+    display: none;
+  }
+  nav .desktop-nav {
+    display: none;
+  }
+  nav .tablet-nav {
+    display: flex;
+  }
+}
+@media (min-width: 1000px) {
+  body {
+    background-image: url(../../assets/home/background-home-desktop.jpg);
+  }
+  nav .tablet-nav {
+    display: none;
+  }
+  nav .desktop-nav {
+    display: flex;
+  }
+}/*# sourceMappingURL=style.css.map */

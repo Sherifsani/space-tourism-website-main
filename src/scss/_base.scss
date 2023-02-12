@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  text-decoration: none;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Bellefair", serif;
+}
+
+h5 {
+  font-family: "Barlow Condensed", sans-serif;
+  // font-size: 25px;
+}
+p,
+a {
+  font-family: "Barlow Condensed", sans-serif;
+}
+.flex {
+  display: flex;
+}
