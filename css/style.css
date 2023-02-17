@@ -518,14 +518,19 @@ main .hero-cta:hover {
 
 .crew-body {
   width: 100%;
+  height: 100vh;
+  overflow: hidden;
   background-image: url("../../assets/crew/background-crew-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .crew-body .crew-main {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  gap: 10px;
+  gap: 20px;
 }
 .crew-body .crew-main .heading {
   display: flex;
@@ -544,6 +549,17 @@ main .hero-cta:hover {
   font-size: 16px;
   color: white;
 }
+.crew-body .crew-main .crew-desc {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+}
+.crew-body .crew-main .crew-desc .text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 .crew-body .crew-main .crew-data {
   width: 100%;
   display: flex;
@@ -552,16 +568,20 @@ main .hero-cta:hover {
   gap: 15px;
 }
 .crew-body .crew-main .crew-data .crew-img {
-  height: 400px;
+  width: 100%;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .crew-body .crew-main .crew-data .crew-img img {
   height: 100%;
 }
 .crew-body .crew-main .crew-data hr {
   width: 100%;
+  position: absolute;
+  bottom: 0;
   opacity: 0.2;
   background-color: rgba(255, 255, 255, 0.25);
 }
@@ -572,10 +592,10 @@ main .hero-cta:hover {
   gap: 10px;
 }
 .crew-body .crew-main .crew-data .controls span {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background-color: white;
-  opacity: 0.1744;
+  opacity: 0.3;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -586,6 +606,7 @@ main .hero-cta:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 7px;
 }
 .crew-body .crew-main .crew-data .crew-head h5,
 .crew-body .crew-main .crew-data .crew-head h4 {
@@ -614,11 +635,70 @@ main .hero-cta:hover {
   .crew-body {
     background-image: url("../../assets/crew/background-crew-tablet.jpg");
   }
+  .crew-body .crew-main .crew-desc {
+    flex-direction: column-reverse !important;
+  }
+  .crew-body .crew-main .heading {
+    align-self: flex-start;
+  }
+  .crew-body .crew-main .crew-data {
+    flex-direction: column-reverse !important;
+  }
+  .crew-body .crew-main .crew-data .crew-img {
+    height: 400px;
+  }
 }
 @media (min-width: 1000px) {
   .crew-body {
     background-image: url("../../assets/crew/background-crew-desktop.jpg");
   }
+  .crew-body .crew-main .heading p,
+  .crew-body .crew-main .heading span {
+    font-size: 28px;
+  }
+  .crew-body .crew-main .crew-data {
+    flex-direction: row-reverse !important;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  .crew-body .crew-main .crew-data .crew-desc {
+    max-width: 60%;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    min-height: 60vh;
+    max-height: 61vh;
+  }
+  .crew-body .crew-main .crew-data .crew-desc .controls {
+    justify-content: flex-start;
+    margin-top: 50px;
+  }
+  .crew-body .crew-main .crew-data .crew-desc .crew-head {
+    align-items: flex-start;
+  }
+  .crew-body .crew-main .crew-data .crew-desc .crew-head h4 {
+    font-size: 50px;
+  }
+  .crew-body .crew-main .crew-data .crew-desc .crew-head h5 {
+    font-size: 28px;
+  }
+  .crew-body .crew-main .crew-data .crew-desc .crew-bio P {
+    text-align: start;
+    font-size: 18px;
+    max-width: 500px;
+  }
+  .crew-body .crew-main .crew-data .crew-img {
+    width: 50%;
+    height: unset;
+    overflow: hidden;
+  }
+  .crew-body .crew-main .crew-data .crew-img img {
+    width: 80%;
+    height: unset;
+  }
+}
+
+.clicked {
+  opacity: 1 !important;
 }
 
 .translate {
