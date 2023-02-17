@@ -28,7 +28,7 @@
     <!-- fonts -->
     <title>Space tourism website</title>
   </head>
-  <body>
+  <body class="destination-body">
     <nav>
       <div class="desktop-nav">
         <div class="logo">
@@ -105,19 +105,45 @@
         </div>
       </div>
     </nav>
-    <!-- 
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
-
-  So, you want to travel to
-  Space
-  Let’s face it; if you want to go to space, you might as well genuinely go to 
-  outer space and not hover kind of on the edge of it. Well sit back, and relax 
-  because we’ll give you a truly out of this world experience!
-
-  Explore -->
-    <script src="../src/app.js"></script>
+    <main class="destination">
+      <div class="first">
+        <div class="heading">
+          <span>02</span>
+          <p>PICK YOUR DESTINATION</p>
+        </div>
+        <div class="dest-img">
+          <img src="../assets/destination/image-moon.png" alt="" />
+        </div>
+      </div>
+      <div class="destination-nav">
+        <ul>
+          <li class="active">Moon</li>
+          <li>mars</li>
+          <li>europa</li>
+          <li>titan</li>
+        </ul>
+        <h1 class="dest-heading">MOON</h1>
+        <div class="dest-desc">
+          <p>
+            See our planet as you’ve never seen it before. A perfect relaxing
+            trip away to help regain perspective and come back refreshed. While
+            you’re there, take in some history by visiting the Luna 2 and Apollo
+            11 landing sites.
+          </p>
+        </div>
+        <hr />
+        <div class="dest-stats">
+          <div class="distance">
+            <h5>AVG. distance</h5>
+            <p>200, 000 km</p>
+          </div>
+          <div class="time">
+            <h5>est. travel time</h5>
+            <p>4 days</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="../src/app.js" type="module"></script>
   </body>
 </html>

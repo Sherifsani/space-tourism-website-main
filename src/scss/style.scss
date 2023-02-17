@@ -12,17 +12,19 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  // gap: 40px;
 }
 nav {
   width: 100%;
-  height: 16vh;
+  height: 12vh;
+  margin-bottom: 20px;
   .mobile-nav {
     display: flex;
     justify-content: space-between;
     padding: 20px;
     align-items: center;
     position: relative;
+    z-index: 100;
     .menu {
       display: flex;
       flex-direction: column;
@@ -203,14 +205,14 @@ main {
   flex-direction: column;
   align-items: center;
   // justify-content: space-between;
-  gap: 150px;
+  gap: 80px;
   .hero-text {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     h5,
     h1,
     p {
@@ -242,6 +244,7 @@ main {
     place-items: center;
     color: $darkBlue;
     cursor: pointer;
+    transition: all 0.2s ease;
   }
   .hero-cta:hover {
     outline: 50px solid rgba(255, 255, 255, 0.6);
@@ -260,12 +263,17 @@ main {
         line-height: 28px;
       }
     }
+    .hero-cta {
+      width: 185px;
+      height: 185px;
+    }
   }
   @media (min-width: 1000px) {
     flex-direction: row;
     padding: 50px;
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: space-between;
     .hero-text {
       align-items: flex-start;
       align-self: flex-end;
@@ -288,10 +296,321 @@ main {
     }
   }
 }
+.destination-body {
+  // background-color: $darkBlue;
+  background-image: url("../../assets/destination/background-destination-mobile.jpg");
+  background-size: cover;
+  height: unset;
+  hr {
+    width: 100%;
+    height: 0.5px;
+    background-color: $brightBlue;
+    margin-block: 30px;
+    opacity: 0.2;
+  }
+  .destination {
+    margin: 0 auto;
+    padding-top: 20px;
+    height: unset;
+    // margin-bottom: 70px;
+    // background: #000;
+    width: 100%;
+    .first {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    .heading {
+      display: flex;
+      gap: 15px;
+      span {
+        font-size: 16px;
+        letter-spacing: 2.7px;
+        color: rgba(255, 255, 255, 0.25);
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: bold;
+      }
+      p {
+        letter-spacing: 2.7px;
+        font-size: 16px;
+        color: white;
+      }
+    }
+    .dest-img {
+      width: 100%;
+      img {
+        width: 100%;
+        animation: rotate 25s infinite;
+      }
+    }
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .destination-nav {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      gap: 10px;
+      ul {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 20px;
+        li {
+          letter-spacing: 2px;
+          font-family: "Bellefair", serif;
+          color: $brightBlue;
+          text-transform: uppercase;
+          font-size: 14px;
+          position: relative;
+          cursor: pointer;
+        }
+        li:hover {
+          color: #fff;
+        }
+        li:hover::before {
+          position: absolute;
+          content: "";
+          bottom: -10px;
+          left: 0;
+          background-color: #fff;
+          width: 100%;
+          height: 3px;
+        }
+      }
+      .dest-heading {
+        font-size: 60px;
+        color: white;
+        text-transform: uppercase;
+      }
+      .dest-desc {
+        width: 100%;
+        p {
+          font-size: 15px;
+          line-height: 25px;
+          color: $brightBlue;
+          text-align: center;
+        }
+      }
+      .dest-stats {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+        .distance,
+        .time {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          align-items: center;
+          p {
+            font-family: "Bellefair", serif !important;
+          }
+        }
+        h5 {
+          font-size: 14px;
+          letter-spacing: 2.36px;
+          text-transform: uppercase;
+          color: $brightBlue;
+          font-weight: normal;
+        }
+        p {
+          text-transform: uppercase;
+          font-size: 28px;
+          color: #fff;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+  @media (min-width: 600px) {
+    background-image: url("../../assets/destination/background-destination-tablet.jpg");
+    .destination {
+      .heading {
+        align-self: start;
+      }
+      .dest-img {
+        width: 400px;
+        img {
+          width: 100%;
+        }
+      }
+      .destination-nav {
+        padding-inline: 40px;
+        .dest-stats {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+    }
+  }
+  @media (min-width: 1000px) {
+    background-image: url("../../assets/destination/background-destination-desktop.jpg");
+    .destination {
+      max-width: 1100px;
+      hr {
+        opacity: 0.2;
+      }
+      .destination-nav {
+        align-items: flex-start;
+        .dest-stats {
+          .time,
+          .distance {
+            align-items: flex-start;
+            text-align: start;
+          }
+        }
+        .dest-desc {
+          p {
+            text-align: start;
+          }
+        }
+      }
+      .first {
+        gap: 25px;
+      }
+      .dest-img {
+        img {
+          // width: 100%;
+          width: 400px;
+        }
+      }
+      .heading {
+        span,
+        p {
+          font-size: 25px;
+          letter-spacing: 4.7px;
+        }
+      }
+    }
+  }
+}
+.crew-body {
+  width: 100%;
+  background-image: url("../../assets/crew/background-crew-mobile.jpg");
+  .crew-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    .heading {
+      display: flex;
+      gap: 15px;
+      span {
+        font-size: 16px;
+        letter-spacing: 2.7px;
+        color: rgba(255, 255, 255, 0.25);
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: bold;
+      }
+      p {
+        text-transform: uppercase;
+        letter-spacing: 2.7px;
+        font-size: 16px;
+        color: white;
+      }
+    }
+    .crew-data {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      .crew-img {
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // background: #000;
+        img {
+          height: 100%;
+        }
+      }
+      hr {
+        width: 100%;
+        opacity: 0.2;
+        background-color: rgba(255, 255, 255, 0.25);
+      }
+      .controls {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+        span {
+          width: 8px;
+          height: 8px;
+          background-color: white;
+          opacity: 0.1744;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        span:hover {
+          opacity: 1;
+        }
+      }
+      .crew-head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h5,
+        h4 {
+          text-transform: uppercase;
+        }
+        h5 {
+          font-size: 16px;
+          color: rgba(255, 255, 255, 0.4);
+          font-family: "Bellefair", serif;
+        }
+        h4 {
+          font-size: 24px;
+          color: #fff;
+        }
+      }
+      .crew-bio {
+        width: 100%;
+        p {
+          color: $brightBlue;
+          font-size: 15px;
+          line-height: 25px;
+          letter-spacing: 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+  @media (min-width: 600px) {
+    background-image: url("../../assets/crew/background-crew-tablet.jpg");
+  }
+  @media (min-width: 1000px) {
+    background-image: url("../../assets/crew/background-crew-desktop.jpg");
+  }
+}
 .translate {
   transform: translateX(100%);
 }
-
+.active {
+  position: relative;
+  color: white !important;
+}
+.active::before {
+  content: "";
+  position: absolute;
+  position: absolute;
+  content: "";
+  bottom: -10px;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  height: 3px;
+}
 @media (min-width: 600px) {
   body {
     background-image: url(../../assets/home/background-home-tablet.jpg);
