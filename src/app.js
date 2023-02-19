@@ -13,7 +13,13 @@ const crewRole = document.querySelector(".crew-role");
 const crewName = document.querySelector(".crew-name");
 const crewBio = document.querySelector(".crew-bio p");
 const controls = document.querySelectorAll(".controls span");
+const no = document.querySelectorAll(".no");
+const techImg = document.querySelector(".img img");
+const techName = document.querySelector(".tech-name");
+const techtext = document.querySelector(".tech-bio p");
+const deskImg = document.querySelector(".desktop-image");
 
+console.log(deskImg.srcset);
 // mobile navbar display
 menuBtn.addEventListener("click", () => {
   mobileNavExpanded.classList.remove("translate");
@@ -45,12 +51,22 @@ controls.forEach((control) => {
     });
   });
 });
+no.forEach((control) => {
+  control.addEventListener("click", () => {
+    control.classList.add("bold");
+    no.forEach((a) => {
+      if (a !== control) a.classList.remove("bold");
+    });
+  });
+});
+
 // fetching data from data.json
 async function fetchData() {
   let response = await fetch("../src/data.json");
   let data = await response.json();
   const destinationData = data.destinations;
   const crew = data.crew;
+  const technology = data.technology;
 
   navItemsDest.forEach((item, index) => {
     item.addEventListener("click", () => {
@@ -69,5 +85,14 @@ async function fetchData() {
       crewBio.textContent = crew[index].bio;
     });
   });
+  no.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      techImg.src = technology[index].images.landscape;
+      deskImg.srcset = technology[index].images.portrait;
+      techName.textContent = technology[index].name;
+      techtext.textContent = technology[index].description;
+    });
+  });
 }
 fetchData();
+console.log(techImg);
