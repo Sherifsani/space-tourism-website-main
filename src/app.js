@@ -19,7 +19,6 @@ const techName = document.querySelector(".tech-name");
 const techtext = document.querySelector(".tech-bio p");
 const deskImg = document.querySelector(".desktop-image");
 
-console.log(deskImg.srcset);
 // mobile navbar display
 menuBtn.addEventListener("click", () => {
   mobileNavExpanded.classList.remove("translate");
@@ -95,4 +94,3 @@ async function fetchData() {
   });
 }
 fetchData();
-console.log(techImg);
